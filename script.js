@@ -58,6 +58,8 @@ function dragover(){
     //log('DROPZONE: in the zone')
     // this = dropzone
     this.classList.add('over')
+    /*apanhar o cartao que esta a ser arrastado, neste caso sabemos que vai
+    apanhar o cartao que esta a ser arrastado por tem a class .is-dragging*/
     const cardBeingDragged = document.querySelector('.is-dragging')
     this.appendChild(cardBeingDragged)
 } 
