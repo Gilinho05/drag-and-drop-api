@@ -14,7 +14,7 @@ const dropzones = document.querySelectorAll('.dropzone')
 disparar uma funcao */
 cards.forEach(card => {
     /* para cada card colocamos os eventos, ou seja tera estes 3 eventos
-    e cada um dos eventos vao executar a sua função*/
+    e cada um dos eventos vao executar a sua função */
     card.addEventListener('dragstart', dragStart)
     card.addEventListener('drag', drag)
     card.addEventListener('dragend', dragEnd)
