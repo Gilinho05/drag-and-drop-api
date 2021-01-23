@@ -13,22 +13,31 @@ const dropzones = document.querySelectorAll('.dropzone')
 /* para cada elemento card adicionamos um evento que ira 
 disparar uma funcao */
 cards.forEach(card => {
-    card.addEventListener('dragstart', dragstart)
+    /* para cada card colocamos os eventos, ou seja tera estes 3 eventos
+    e cada um dos eventos vao executar a sua função*/
+    card.addEventListener('dragstart', dragStart)
     card.addEventListener('drag', drag)
-    card.addEventListener('dragend', dragend)
+    card.addEventListener('dragend', dragEnd)
 })
 
 //criacao das funcoes que sao disparadas pelos eventos criados
-function dragstart(){
+function dragStart(){
     //log('CARD: Start dragging')
+    dropzones.forEach(dropzone => dropzone.classList.add('highlight'))
+
+    // o "this" é o card referenciado acima 
+    this.classList.add('is-dragging')
 }
 
 function drag(){
     //log('CARD: is dragging')
 } 
 
-function dragend(){
+function dragEnd(){
     //log('CARD: Stop dragging')
+    dropzones.forEach(dropzone => dropzone.classList.remove('highlight'))
+     
+    this.classList.remove('is-dragging')
 }
 
 
@@ -41,17 +50,24 @@ dropzones.forEach(dropzone => {
 })
 
 function dragenter(){
-    log('DROPZONE: enter in zone')
+    //log('DROPZONE: enter in zone')
+    this.classList.remove('over')
 }
 
 function dragover(){
-    log('DROPZONE: in the zone')
+    //log('DROPZONE: in the zone')
+    // this = dropzone
+    this.classList.add('over')
+    const cardBeingDragged = document.querySelector('.is-dragging')
+    this.appendChild(cardBeingDragged)
 } 
 
 function dragleave(){
-    log('DROPZONE: leave the zone')
+    //log('DROPZONE: leave the zone')
+    this.classList.remove('over')
 }
 
 function drop(){
-    log('DROPZONE: dropped in the zone')
+    //log('DROPZONE: dropped in the zone')
+    this.classList.remove('over')
 }

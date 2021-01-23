@@ -37,6 +37,7 @@ h3{
     font-weight: 600;
     font-size: 18px;
     background-color: #1a1a1c;
+    cursor: move;
 }
 .status{
     width: 30px;
@@ -53,4 +54,22 @@ h3{
 }
 .status.red{
     background: red;
+}
+
+/* DRAG AND DROP STYLES */
+
+.highlight {
+    background-color: #fd951f09;
+}
+.card, .dropzone {
+    transition: .4s;
+}
+
+.is-dragging {
+    cursor: move !important;
+    opacity: 0.3;
+}
+
+.over {
+    background-color: #d4cd1311;
 }
