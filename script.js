@@ -41,17 +41,17 @@ dropzones.forEach(dropzone => {
 })
 
 function dragenter(){
-    log('DROPZONE: enter in zone')
+    //log('DROPZONE: enter in zone')
 }
 
 function dragover(){
-    log('DROPZONE: in the zone')
+    //log('DROPZONE: in the zone')
 } 
 
 function dragleave(){
-    log('DROPZONE: leave the zone')
+    //log('DROPZONE: leave the zone')
 }
 
 function drop(){
-    log('DROPZONE: dropped in the zone')
+    //log('DROPZONE: dropped in the zone')
 }
